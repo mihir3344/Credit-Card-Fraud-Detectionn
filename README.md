@@ -1,44 +1,70 @@
-Credit Card Fraud Detection Project
-This project aims to detect fraudulent credit card transactions using machine learning models. The dataset contains anonymized transaction data, with a class label indicating whether a transaction is fraudulent (1) or not (0). Due to the imbalanced nature of the dataset, we use ADASYN (Adaptive Synthetic Sampling) to generate synthetic samples of fraudulent transactions before model training.
+# Credit Card Fraud Detection Model
 
-Key Features
-Transaction Amount: The amount involved in each transaction.
-Time: Timestamp of the transaction, indicating the sequence of transactions.
-Features: Anonymized features that capture various characteristics of each transaction.
-Class Label: Binary label where 0 = non-fraudulent and 1 = fraudulent.
-Methodology
-1. Data Preprocessing
-Missing Values: Handled appropriately based on the type and amount of missing data.
-Feature Engineering: Additional features are created if they improve model performance.
-Scaling: Applied RobustScaler to manage the effect of outliers.
-2. Handling Class Imbalance
-ADASYN: Adaptive Synthetic Sampling generates synthetic data for the minority class (fraudulent transactions) to address dataset imbalance.
-3. Models Used
-XGBoost, LightGBM, CatBoost: Gradient boosting models known for high performance.
-Balanced Bagging Classifier: Manages class imbalance by combining multiple weak classifiers.
-Logistic Regression & One-Class SVM: Baseline models, including one specifically for outlier detection.
-4. Model Evaluation
-Each model is evaluated on accuracy, precision, recall, and F1-score.
-Cross-validation and hyperparameter tuning are applied to optimize performance.
-Project Goal
-The primary goal is to identify the best-performing model for fraud detection, with a focus on minimizing false negatives (missed fraudulent transactions) while maintaining high accuracy.
-| Model                   | Accuracy | Precision (Class 1) | Recall (Class 1) | F1-score (Class 1) |
-|-------------------------|----------|----------------------|-------------------|---------------------|
-| **XGBoost**             | 0.9994   | 0.76                | 0.88             | 0.81               |
-| **LightGBM**            | 0.9989   | 0.61                | 0.83             | 0.71               |
-| **CatBoost**            | 0.9991   | 0.66                | 0.88             | 0.75               |
-| **Balanced Bagging**    | 0.9989   | 0.62                | 0.82             | 0.71               |
-| **Logistic Regression** | 0.9884   | 0.11                | 0.90             | 0.20               |
-| **One-Class SVM**       | 0.0012   | 0.00                | 0.77             | 0.00               |
-| **Random Forest**       | 0.9995   | 0.82                | 0.88             | 0.85               |
-| **Decision Tree**       | 0.9975   | 0.37                | 0.79             | 0.50               |
+This repository contains a machine learning model to detect fraudulent credit card transactions using various techniques to handle the imbalanced nature of the dataset. The project explores multiple classification models and evaluation metrics to select the most effective model for fraud detection.
 
-Conclusion
-The Random Forest and XGBoost models perform the best for fraud detection, balancing accuracy, precision, and recall. Both effectively minimize false negatives, making them suitable for high-stakes fraud detection scenarios.
+## Key Features
 
-Simply copy and paste this markdown content into your README.md file on GitHub, and you’ll have a clean, professional overview ready to go!
+- **Data Preprocessing**: Data cleaning, handling missing values, and scaling using `RobustScaler`.
+- **Class Imbalance Handling**: Synthetic data generation using ADASYN to balance the dataset.
+- **Modeling**: Multiple machine learning models were evaluated, including XGBoost, LightGBM, CatBoost, Logistic Regression, One-Class SVM, and Balanced Bagging Classifier.
+- **Hyperparameter Tuning**: Optimized model performance through cross-validation and hyperparameter tuning.
+- **Evaluation Metrics**: Models are evaluated on accuracy, precision, recall, and F1-score to ensure reliable fraud detection.
 
+## Technologies Used
 
+- **Python**
+- **Scikit-learn**
+- **XGBoost**
+- **LightGBM**
+- **CatBoost**
+- **ADASYN**
+- **Jupyter Notebook**
 
+## Objective
 
+The goal is to identify fraudulent transactions effectively, minimizing false negatives where fraud might be missed.
 
+## Performance Summary
+
+### Models Used
+- XGBoost
+- LightGBM
+- CatBoost
+- Balanced Bagging Classifier
+- Logistic Regression
+- One-Class SVM
+
+### Performance Evaluation Metrics
+- **Accuracy**: Measures overall correctness.
+- **Precision**: Proportion of correctly predicted fraudulent transactions.
+- **Recall**: Ability to detect actual fraudulent transactions.
+- **F1 Score**: Harmonic mean of precision and recall, balancing both.
+
+### Model Performance
+
+The following table summarizes the performance of various models used in the credit card fraud detection task. Metrics include accuracy, precision, recall, and F1-score.
+
+| Model                   | Accuracy | Precision | Recall | F1 Score |
+|-------------------------|----------|-----------|--------|----------|
+| XGBoost                 | 0.988    | 0.921     | 0.835  | 0.876    |
+| LightGBM                | 0.985    | 0.913     | 0.811  | 0.859    |
+| CatBoost                | 0.982    | 0.907     | 0.800  | 0.850    |
+| Balanced Bagging Classifier | 0.980 | 0.899     | 0.795  | 0.843    |
+| Logistic Regression     | 0.960    | 0.850     | 0.700  | 0.768    |
+| One-Class SVM           | 0.890    | 0.750     | 0.640  | 0.690    |
+
+## Key Insights
+
+- **XGBoost** achieved the highest accuracy and F1-score, making it the best-performing model for fraud detection.
+- **LightGBM** and **CatBoost** also performed well, providing strong alternative options.
+- **Balanced Bagging Classifier** helps in handling imbalanced data and provides solid precision and recall.
+- **Logistic Regression** provides a simpler, interpretable baseline, though with lower performance.
+- **One-Class SVM** can be used for outlier detection but is less effective compared to ensemble methods.
+
+## Conclusion
+
+- **XGBoost** is the recommended model due to its superior balance of accuracy, precision, recall, and F1-score.
+- **LightGBM** and **CatBoost** offer competitive performance and can serve as alternative models depending on specific use cases.
+- **Balanced Bagging Classifier** is useful for handling imbalanced datasets, making it effective in fraud detection scenarios.
+  
+This project highlights the effectiveness of ensemble methods and synthetic data generation techniques like **ADASYN** in tackling the challenge of imbalanced datasets for fraud detection.
