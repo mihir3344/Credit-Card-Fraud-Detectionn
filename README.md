@@ -22,17 +22,17 @@ Each model is evaluated on accuracy, precision, recall, and F1-score.
 Cross-validation and hyperparameter tuning are applied to optimize performance.
 Project Goal
 The primary goal is to identify the best-performing model for fraud detection, with a focus on minimizing false negatives (missed fraudulent transactions) while maintaining high accuracy.
+| Model                   | Accuracy | Precision (Class 1) | Recall (Class 1) | F1-score (Class 1) |
+|-------------------------|----------|----------------------|-------------------|---------------------|
+| **XGBoost**             | 0.9994   | 0.76                | 0.88             | 0.81               |
+| **LightGBM**            | 0.9989   | 0.61                | 0.83             | 0.71               |
+| **CatBoost**            | 0.9991   | 0.66                | 0.88             | 0.75               |
+| **Balanced Bagging**    | 0.9989   | 0.62                | 0.82             | 0.71               |
+| **Logistic Regression** | 0.9884   | 0.11                | 0.90             | 0.20               |
+| **One-Class SVM**       | 0.0012   | 0.00                | 0.77             | 0.00               |
+| **Random Forest**       | 0.9995   | 0.82                | 0.88             | 0.85               |
+| **Decision Tree**       | 0.9975   | 0.37                | 0.79             | 0.50               |
 
-Model Performance Summary
-Model	Accuracy	Precision (Class 1)	Recall (Class 1)	F1-score (Class 1)
-XGBoost	0.9994	0.76	0.88	0.81
-LightGBM	0.9989	0.61	0.83	0.71
-CatBoost	0.9991	0.66	0.88	0.75
-Balanced Bagging	0.9989	0.62	0.82	0.71
-Logistic Regression	0.9884	0.11	0.90	0.20
-One-Class SVM	0.0012	0.00	0.77	0.00
-Random Forest	0.9995	0.82	0.88	0.85
-Decision Tree	0.9975	0.37	0.79	0.50
 Conclusion
 The Random Forest and XGBoost models perform the best for fraud detection, balancing accuracy, precision, and recall. Both effectively minimize false negatives, making them suitable for high-stakes fraud detection scenarios.
 
