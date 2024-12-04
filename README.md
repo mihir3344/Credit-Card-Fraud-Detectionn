@@ -43,15 +43,16 @@ The goal is to identify fraudulent transactions effectively, minimizing false ne
 ### Model Performance
 
 The following table summarizes the performance of various models used in the credit card fraud detection task. Metrics include accuracy, precision, recall, and F1-score.
-
-| Model                   | Accuracy | Precision | Recall | F1 Score |
-|-------------------------|----------|-----------|--------|----------|
-| XGBoost                 | 0.988    | 0.921     | 0.835  | 0.876    |
-| LightGBM                | 0.985    | 0.913     | 0.811  | 0.859    |
-| CatBoost                | 0.982    | 0.907     | 0.800  | 0.850    |
-| Balanced Bagging Classifier | 0.980 | 0.899     | 0.795  | 0.843    |
-| Logistic Regression     | 0.960    | 0.850     | 0.700  | 0.768    |
-| One-Class SVM           | 0.890    | 0.750     | 0.640  | 0.690    |
+| Model                        | Accuracy | Precision | Recall | F1 Score |
+|------------------------------|----------|-----------|--------|----------|
+| XGBoost                      | 0.9996   | 1.00      | 0.85   | 0.87     |
+| LightGBM                     | 0.9992   | 0.70      | 0.87   | 0.77     |
+| CatBoost                     | 0.9991   | 0.68      | 0.84   | 0.75     |
+| Balanced Bagging Classifier  | 0.9991   | 0.69      | 0.74   | 0.71     |
+| Logistic Regression          | 0.8916   | 0.01      | 0.96   | 0.03     |
+| One-Class SVM                | 0.0006   | 0.00      | 0.40   | 0.00     |
+| Random Forest                | 0.9996   | 0.95      | 0.77   | 0.85     |
+| Decision Tree                | 0.9987   | 0.57      | 0.70   | 0.63     |
 
 ## Key Insights
 
